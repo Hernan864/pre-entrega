@@ -19,11 +19,6 @@ body {
   font-family: "Cabin", sans-serif;
 }
 
-/* main {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
-
 .header-container {
   position: fixed;
   top: 0;
@@ -139,6 +134,7 @@ li {
   margin: 10px;
   text-align: center;
 }
+
 .link-items:hover {
   background-color: var(--secondary-green);
 }
@@ -150,6 +146,7 @@ li {
   padding: 5px;
   display: flex;
 }
+
 .article1-item {
   width: 100%;
   height: 100%;
@@ -159,13 +156,16 @@ li {
   display: flex;
   flex-direction: column;
 }
+
 .article2-items {
   padding: 5px;
   transition: transform 0.2s;
 }
+
 .article2-items:hover {
   transform: scale(1.01);
 }
+
 .item1 {
   margin-bottom: 10px;
 }
@@ -263,6 +263,7 @@ li {
   align-items: center;
   box-shadow: 0px 0px 10px -3px grey;
 }
+
 .contact-data-info {
   width: 30%;
 
@@ -270,8 +271,8 @@ li {
   flex-direction: column;
   justify-content: center;
 }
+
 .contact-data-item {
-  /* font-size: 30px; */
   color: var(--primary-green);
 }
 
@@ -398,10 +399,8 @@ li {
     flex-direction: column;
     justify-content: space-evenly;
     width:50% ;
-
   }
   
-
 }
 @media (min-width: 768px) {
   body {
