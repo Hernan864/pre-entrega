@@ -4,12 +4,9 @@
   --box-shadow: 6px 3px 25px -3px grey;
   --background-Header: #f8f9f9;
   --app-width: 1200px;
-  --primary-green:#28b29e;
-  --secondary-green:aquamarine;
+  --primary-green: #28b29e;
+  --secondary-green: aquamarine;
   --primary-pink: #eb3d72;
-  
-
-  
 }
 * {
   padding: 0;
@@ -22,10 +19,10 @@ body {
   font-family: "Cabin", sans-serif;
 }
 
-main {
+/* main {
   max-width: 1200px;
   margin: 0 auto;
-}
+} */
 
 .header-container {
   position: fixed;
@@ -242,16 +239,16 @@ li {
 
 /* ----------- STYLE CONTACTOS--------------- */
 .contact-section {
-  width: 100%;
+  width: var(--app-width);
   height: 600px;
-  margin: 130px 0;
+  margin: 130px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .contact-title {
   margin-bottom: 30px;
-  font-size: 35px;
+  /* font-size: 35px; */
   color: var(--primary-pink);
 }
 .contact-container {
@@ -274,7 +271,7 @@ li {
   justify-content: center;
 }
 .contact-data-item {
-  font-size: 30px;
+  /* font-size: 30px; */
   color: var(--primary-green);
 }
 
@@ -374,6 +371,38 @@ li {
   height: 450px;
 }
 
+@media (max-width: 425px) {
+  body {
+    position: absolute;
+  }
+
+  /* -----------SECTION NATURA-------------- */
+  .natura-article {
+    flex-direction: column;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  /* -----------SECTION SOBRE MI-------------- */
+  .sobre-mi-container {
+    flex-direction: column;
+  }
+
+  .sobre-mi-img2{
+    width: 100%;
+    height: 100%;
+  }
+
+  .contact-container{
+    flex-direction: column;
+    justify-content: space-evenly;
+    width:50% ;
+
+  }
+  
+
+}
 @media (min-width: 768px) {
   body {
     font-size: 1rem;
