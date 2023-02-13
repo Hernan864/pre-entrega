@@ -14,7 +14,6 @@
   box-sizing: border-box;
 }
 
-
 .header-container {
   position: fixed;
   top: 0;
@@ -37,14 +36,17 @@
 }
 
 .header-nav {
-  position: fixed;
-  top: 110px;
-  left: 0;
   width: 100%;
-  transition: 1s;
-  opacity: 0;
-  height: 0;
+  height: 70px;
   text-transform: uppercase;
+}
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70px;
+  width: 100%;
 }
 
 #check {
@@ -53,28 +55,13 @@
 
 .bars-menu {
   cursor: pointer;
-}
-
-.check:checked + label + .header-nav {
-  background-color: black;
-  opacity: 1;
-  height: 100vh;
+  display: none;
 }
 
 li {
   list-style: none;
 }
 
-.nav-menu {
-  position: absolute;
-  top: 0;
-  height: 90vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
 .tupper-link,
 .natura-link,
 .menu-link {
@@ -88,23 +75,6 @@ li {
 }
 
 /* -----------------------------------HOME SECTION----------------------- */
-.main-section {
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  padding: 130px 0;
-  display: flex;
-}
-
-.section-container {
-  width: 80%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
 
 .banner {
   margin-top: 130px;
@@ -116,11 +86,30 @@ li {
   width: 100%;
   height: 100%;
 }
+.section-container {
+  max-width: 1200px;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.section-items {
+  transition: transform 0.2s;
+}
+
+.section-items:hover {
+  transform: scale(1.01);
+}
 
 .img {
-  width: 472px;
-  height: 317px;
-  max-width: 40rem;
+  max-width: 350px;
+  max-height: 350px;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   box-shadow: var(--box-shadow);
 }
@@ -139,43 +128,10 @@ li {
   background-color: var(--secondary-green);
 }
 
-.article1 {
-  width: 100%;
-  height: 400px;
-  margin: 20px;
-  padding: 5px;
-  display: flex;
-}
-
-.article1-item {
-  width: 100%;
-  height: 100%;
-}
-
-.article2 {
-  display: flex;
-  flex-direction: column;
-}
-
-.article2-items {
-  padding: 5px;
-  transition: transform 0.2s;
-}
-
-.article2-items:hover {
-  transform: scale(1.01);
-}
-
-.item1 {
-  margin-bottom: 10px;
-}
-
-.item2 {
-  margin-top: 10px;
-}
-
 /* -----------------STYLE NATURA------------------ */
 .natura-section {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-top: 130px;
   display: flex;
   flex-direction: column;
@@ -184,6 +140,7 @@ li {
 }
 
 .natura-article {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -239,8 +196,9 @@ li {
 
 /* ----------- STYLE CONTACTOS--------------- */
 .contact-section {
-  width: var(--app-width);
-  height: 600px;
+  max-width: var(--app-width);
+  width: 100%;
+  height: 40rem;
   margin: 130px auto;
   display: flex;
   flex-direction: column;
@@ -248,7 +206,6 @@ li {
 }
 .contact-title {
   margin-bottom: 30px;
-  /* font-size: 35px; */
   color: var(--primary-pink);
 }
 .contact-container {
@@ -265,8 +222,6 @@ li {
 }
 
 .contact-data-info {
-  width: 30%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -274,6 +229,7 @@ li {
 
 .contact-data-item {
   color: var(--primary-green);
+  display: block;
 }
 
 .contact-data-form {
@@ -373,79 +329,78 @@ li {
 }
 
 /* --------------------CATALOGO TUPPER------------------------ */
-#grid-container{
+#grid-container {
   display: grid;
   gap: 15px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr;
-  grid-template-columns:repeat(8, 1fr);
-  grid-template-areas: 
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas:
     "img img    img    img    nav    nav    nav    nav"
     "... search search search search search search ..."
     "... p1     p1     p2     p2     p3     p3     ..."
     "... p1     p1     p2     p2     p3     p3     ..."
     "... p4     p4     p5     p5     p6     p6     ..."
-    "... p4     p4     p5     p5     p6     p6     ..."    
+    "... p4     p4     p5     p5     p6     p6     ..."
     "foo foo    foo    foo    foo    foo    foo    foo";
-  }
+}
 
-  .header-container {
-    display: grid;
-    grid-template-rows: 110px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-      "img  nav";
-  }
+.header-container {
+  display: grid;
+  grid-template-rows: 110px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img  nav";
+}
 
-  #search{
+#search {
   grid-area: search;
 }
 
-#producto-1{
+#producto-1 {
   grid-area: p1;
 }
 
-#producto-2{
+#producto-2 {
   grid-area: p2;
 }
 
-#producto-3{
+#producto-3 {
   grid-area: p3;
 }
 
-#producto-4{
+#producto-4 {
   grid-area: p4;
 }
 
-#producto-5{
+#producto-5 {
   grid-area: p5;
 }
 
-#producto-6{
+#producto-6 {
   grid-area: p6;
 }
 
-#footer{
+#footer {
   grid-area: foo;
 }
 
-.card{
+.card {
   align-items: center;
 }
-.card-body{
+.card-body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#logo{
+#logo {
   grid-area: img;
   background-color: #28b29e;
 }
 
-#navigation{
+#navigation {
   grid-area: nav;
   width: 100%;
   justify-content: flex-end;
@@ -461,7 +416,7 @@ li {
   background-color: var(--primary-green);
   color: white;
 }
-.btn:hover{
+.btn:hover {
   background-color: grey;
   color: white;
 }
@@ -535,6 +490,7 @@ li {
     opacity: 1;
   }
 }
+
 @media screen and (max-width: 768px) {
   /* -----------SECTION SOBRE MI-------------- */
   .sobre-mi-container {
@@ -546,122 +502,102 @@ li {
     height: 100%;
   }
 
+  .bars-menu {
+    display: flex;
+    width: 20px;
+    margin: 0 auto;
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 130px;
+    left: 0;
+    width: 100%;
+    height: 0;
+  }
+
+  .check:checked + label + .header-nav {
+    opacity: 1;
+    height: 100vh;
+    transition: opacity 2s;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 0;
+    height: 90vh;
+    width: 100%;
+    display: none;
+  }
+
+  .check:checked + label + .header-nav > .nav-menu {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+  }
+
+  .section-container {
+    height: 600px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px auto;
+  }
+
+   /* -----------SECTION NATURA-------------- */
+  .natura-article {
+    flex-direction: column;
+    margin: 0 auto;
+    width: unset;
+  }
+
+   /* -----------SECTION CONTACT-------------- */
+  
   .contact-container {
     flex-direction: column;
     justify-content: space-evenly;
-    width: 50%;
+    width: 80%;
   }
-  .bars-menu{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+
+  .contact-data-form {
+    width: 90%;
   }
+
   /* grid */
-  #grid-container{
-   display: grid;
+  #grid-container {
+    display: grid;
     grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 50px 1fr 1fr 50px;
-    grid-template-areas: 
+    grid-template-areas:
       "img img    nav  nav"
       "... search search ..."
       "... p1     p2     ..."
       "... p1     p2     ..."
       "... p3     p4     ..."
-      "... p3     p4     ..."    
-      "... p5     p6     ..."    
-      "... p5     p6     ..."    
+      "... p3     p4     ..."
+      "... p5     p6     ..."
+      "... p5     p6     ..."
       "foo foo    foo    foo";
   }
 }
 
 @media screen and (max-width: 425px) {
-  body {
-    position: absolute;
 
-  }
-
-  /* -----------SECTION NATURA-------------- */
-  .natura-article {
-    flex-direction: column;
-  }
-
-  #grid-container{
+  #grid-container {
     grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 20px 1fr 20px;
-    grid-template-areas: 
+    grid-template-areas:
       "img img    nav"
       "... search ..."
       "... p1     ..."
       "... p2     ..."
       "... p3     ..."
-      "... p4     ..."    
-      "... p5     ..."    
-      "... p6     ..."    
+      "... p4     ..."
+      "... p5     ..."
+      "... p6     ..."
       "foo foo    foo";
-  }
-
-}
-
-
-@media screen and (min-width: 768px) {
-  body {
-    font-size: 1rem;
-  }
-
-  .bars-menu {
-    display: none;
-  }
-
-  .header-nav {
-    position: initial;
-    opacity: initial;
-    transition: none;
-    width: 100%;
-    height: 70px;
-    display: flex;
-  }
-
-  .nav-menu {
-    position: initial;
-    flex-direction: row;
-    height: 70px;
-  }
-
-  /* -----------SECTION HOME-------------- */
-  .section-container {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-
-  .article2 {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .item1 {
-    margin-bottom: 0;
-    margin-right: 10px;
-  }
-
-  .item2 {
-    margin-top: 0;
-    margin-left: 10px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  body {
-    font-size: 16px;
   }
 }
