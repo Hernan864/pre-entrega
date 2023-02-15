@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <script src="https://kit.fontawesome.com/5e5e399d24.js" crossorigin="anonymous"></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-    crossorigin="anonymous"></script>
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-    crossorigin="anonymous"></script>
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="../css/styles.css">
     <script src="https://kit.fontawesome.com/5e5e399d24.js" crossorigin="anonymous"></script>
@@ -24,8 +24,9 @@
 </head>
 
 <body>
-    <div id="grid-container">
-        <header class="header-container">
+    <header>
+
+        <div class="header-container">
             <img id="logo" src="../assets/img/logo.png" alt="" class="header-logo" />
             <input type="checkbox" name="check" id="check" class="check" />
             <label for="check" class="bars-menu">
@@ -54,75 +55,80 @@
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
-            <form id="search" class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn " type="button">Search</button>
-            </form>
-            <div id="producto-1" class="card">
-                <img src="../assets/img-tupper-cards/070422_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="./contacto.html" class="btn ">Consultar producto</a>
-                </div>
-            </div>
-            <div id="producto-2" class="card">
-                <img src="../assets/img-tupper-cards/076644_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="#" class="btn ">Consultar producto</a>
-                </div>
-            </div>
-            <div id="producto-3" class="card">
-                <img src="../assets/img-tupper-cards/077844_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="#" class="btn ">Consultar producto</a>
-                </div>
-            </div>
-            <div id="producto-4" class="card">
-                <img src="../assets/img-tupper-cards/152294_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="#" class="btn ">Consultar producto</a>
-                </div>
-            </div>
-            <div id="producto-5" class="card">
-                <img src="../assets/img-tupper-cards/193291_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="#" class="btn ">Consultar producto</a>
-                </div>
-            </div>
-            <div id="producto-6" class="card">
-                <img src="../assets/img-tupper-cards/291081_219x219.png" class="card-img-top" alt="imagen de producto">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                    <a href="#" class="btn ">Consultar producto</a>
-                </div>
-            </div>
+
+
+    <div id="grid-container">
      
+        <form id="search" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn " type="button">Search</button>
+        </form>
+        <div id="producto-1" class="card">
+            <img src="../assets/img-tupper-cards/070422_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="./contacto.html" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+        <div id="producto-2" class="card">
+            <img src="../assets/img-tupper-cards/076644_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="#" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+        <div id="producto-3" class="card">
+            <img src="../assets/img-tupper-cards/077844_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="#" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+        <div id="producto-4" class="card">
+            <img src="../assets/img-tupper-cards/152294_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="#" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+        <div id="producto-5" class="card">
+            <img src="../assets/img-tupper-cards/193291_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="#" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+        <div id="producto-6" class="card">
+            <img src="../assets/img-tupper-cards/291081_219x219.png" class="card-img-top" alt="imagen de producto">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                    the card's content.</p>
+                <a href="#" class="btn ">Consultar producto</a>
+            </div>
+        </div>
+
         <footer id="footer" class="footer">
             <h2 class="footer-title">¡Seguime!</h2>
             <div class="icons-container">
-              <i class="fa-brands fa-facebook icon"></i>
-              <i class="fa-brands fa-whatsapp icon"></i>
-              <i class="fa-brands fa-twitter icon"></i>
+                <i class="fa-brands fa-facebook icon"></i>
+                <i class="fa-brands fa-whatsapp icon"></i>
+                <i class="fa-brands fa-twitter icon"></i>
             </div>
-          </footer>
+        </footer>
     </div>
 
 </body>
