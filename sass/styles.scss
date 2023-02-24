@@ -1,0 +1,158 @@
+@import "media-query";
+@import "fonts";
+@import  "variables-root";
+@import  "reset";
+@import "header";
+@import "home";
+@import "natura";
+@import "sobre-mi";
+@import "contacto";
+@import "grid-catalogo-tupper";
+@import "footer";
+
+.tupper-link{
+  color: #959595;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.link-items {
+  color: black;
+  display: inline-block;
+  width: 160px;
+  border-radius: 30px;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+}
+
+.link-items:hover {
+  background-color: var(--secondary-green);
+}
+
+#logo {
+  grid-area: img;
+  background-color: #28b29e;
+}
+
+#navigation {
+  grid-area: nav;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------CATALOGO NATURA------------------------ */
+.container-fluid {
+  margin-top: 130px;
+  max-width: var(--app-width);
+  width: 100%;
+}
+.btn {
+  background-color: var(--primary-green);
+  color: white;
+}
+.btn:hover {
+  background-color: grey;
+  color: white;
+}
+.card-1 {
+  -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.card-2 {
+  -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.card-3 {
+  -webkit-animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.card-4 {
+  -webkit-animation: swing-in-top-fwd 5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.card-5 {
+  -webkit-animation: swing-in-top-fwd 6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+.card-6 {
+  -webkit-animation: swing-in-top-fwd 7s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+/* animista */
+.swing-in-top-fwd {
+  -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    both;
+  animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+    transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  // .check:checked + label + .header-nav > .nav-menu {
+  //   height: 90vh;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-evenly;
+  //   align-items: center;
+  //   background-color: black;
+  // }
+
+ 
+  /* grid */
+ 
+}
+
+
