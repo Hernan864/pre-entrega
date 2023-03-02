@@ -2,7 +2,7 @@ header{
   position: fixed;
   width: 100%;
   height: 110px;
-  background-color: var(--background-Header);
+  background-color: $background-Header;
   top: 0;
   z-index: 1000;
 
@@ -12,9 +12,9 @@ header{
     left: 0;
     right: 0;
     z-index: 999;
-    background-color: var(--background-Header);
+    background-color:$background-Header;
     color: black;
-    max-width: var(--app-width);
+    max-width: $app-width;
     width: 100%;
     height: 110px;
     margin: 0 auto;
@@ -72,7 +72,6 @@ header{
         align-items: center;
         height: 0px;
         width: 100%;
-        transition: height 2s;
 
         li {
           list-style: none;
@@ -83,7 +82,7 @@ header{
             cursor: pointer;
 
             &:hover {
-              color: var(--primary-green);
+              color: $primary-green;
             }
           }
 

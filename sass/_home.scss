@@ -1,4 +1,4 @@
-@import "media-query";
+
 .banner {
   margin-top: 130px;
   width: 100%;
@@ -11,7 +11,7 @@
 }
 
 .section-container {
-  max-width: var(--app-width);
+  max-width: $app-width;
   width: 80%;
   height: 100%;
   display: flex;
@@ -34,7 +34,7 @@
       width: 100%;
       height: 100%;
       cursor: pointer;
-      box-shadow: var(--box-shadow);
+      box-shadow: $box-shadow;
     }
   }
 
