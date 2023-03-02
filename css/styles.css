@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Poppins&display=swap");
-:root {
-  --box-shadow: 6px 3px 25px -3px grey;
-  --background-Header: #f8f9f9;
-  --app-width: 1200px;
-  --primary-green: #28b29e;
-  --secondary-green: aquamarine;
-  --primary-pink: #eb3d72;
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -19,7 +10,7 @@ header {
   position: fixed;
   width: 100%;
   height: 110px;
-  background-color: var(--background-Header);
+  background-color: #f8f9f9;
   top: 0;
   z-index: 1000;
 }
@@ -29,9 +20,9 @@ header .header-container {
   left: 0;
   right: 0;
   z-index: 999;
-  background-color: var(--background-Header);
+  background-color: #f8f9f9;
   color: black;
-  max-width: var(--app-width);
+  max-width: 1200px;
   width: 100%;
   height: 110px;
   margin: 0 auto;
@@ -78,7 +69,6 @@ header .header-container .header-nav .nav-menu {
   align-items: center;
   height: 70px;
   width: 100%;
-  transition: height 2s;
 }
 header .header-container .header-nav .nav-menu li {
   list-style: none;
@@ -89,7 +79,7 @@ header .header-container .header-nav .nav-menu li .menu-link {
   cursor: pointer;
 }
 header .header-container .header-nav .nav-menu li .menu-link:hover {
-  color: var(--primary-green);
+  color: #28b29e;
 }
 @media screen and (max-width: 768px) {
   header .header-container .header-nav .nav-menu {
@@ -121,7 +111,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .section-container {
-  max-width: var(--app-width);
+  max-width: 1200px;
   width: 80%;
   height: 100%;
   display: flex;
@@ -142,7 +132,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   width: 100%;
   height: 100%;
   cursor: pointer;
-  box-shadow: var(--box-shadow);
+  box-shadow: 6px 3px 25px -3px grey;
 }
 @media screen and (max-width: 768px) {
   .section-container {
@@ -154,8 +144,8 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   }
 }
 
-.natura-section {
-  max-width: var(--app-width);
+.section-card {
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 130px;
   display: flex;
@@ -163,7 +153,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   justify-content: center;
   align-items: center;
 }
-.natura-section .natura-article {
+.section-card .section-article {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -171,7 +161,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   margin: 10px;
   margin-top: 30px;
 }
-.natura-section .natura-article .nat-art-item {
+.section-card .section-article .section-art-item {
   width: 350px;
   height: 350px;
   margin: 10px;
@@ -180,20 +170,23 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   align-items: center;
   text-transform: uppercase;
   color: #959595;
-  box-shadow: var(--box-shadow);
+  box-shadow: 6px 3px 25px -3px grey;
   transition: transform 0.2s;
   cursor: pointer;
 }
-.natura-section .natura-article .nat-art-item:hover {
+.section-card .section-article .section-art-item:hover {
   transform: scale(1.01);
 }
-.natura-section .natura-article .nat-art-item .natura-link {
+.section-card .section-article .section-art-item .section-link {
   color: #959595;
   text-decoration: none;
   cursor: pointer;
 }
+.section-card .section-article .section-art-item .section-link:hover {
+  color: #28b29e;
+}
 @media screen and (max-width: 768px) {
-  .natura-section .natura-article {
+  .section-card .section-article {
     flex-direction: column;
     margin: 0 auto;
     width: unset;
@@ -233,7 +226,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 .section-sobre-mi .sobre-mi-container .sobre-mi-parrafo .sobre-mi-title {
   font-size: 18px;
-  color: var(--primary-pink);
+  color: #eb3d72;
 }
 .section-sobre-mi .sobre-mi-container .sobre-mi-parrafo .sobre-mi-text {
   margin-right: 40px;
@@ -256,7 +249,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .contact-section {
-  max-width: var(--app-width);
+  max-width: 1200px;
   width: 100%;
   height: 40rem;
   margin: 130px auto;
@@ -266,10 +259,10 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 .contact-section .contact-title {
   margin-bottom: 30px;
-  color: var(--primary-pink);
+  color: #eb3d72;
 }
 .contact-section .contact-container {
-  max-width: var(--app-width);
+  max-width: 1200px;
   width: 100%;
   height: 600px;
   padding: 0 30px;
@@ -277,7 +270,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 10px -3px grey;
+  box-shadow: 0px 0px 10px -3px gray;
 }
 .contact-section .contact-container .contact-data-info {
   display: flex;
@@ -285,7 +278,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   justify-content: center;
 }
 .contact-section .contact-container .contact-data-info .contact-data-item {
-  color: var(--primary-green);
+  color: #28b29e;
   display: block;
 }
 .contact-section .contact-container .contact-data-form {
@@ -297,15 +290,15 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   justify-content: space-around;
 }
 .contact-section .contact-container .contact-data-form .contact-form .form-input {
-  outline-color: var(--primary-pink);
-  border: 1px solid grey;
+  outline-color: #eb3d72;
+  border: 1px solid gray;
   margin-top: 10px;
   height: 30px;
   padding: 5px;
   border-radius: 5px;
 }
 .contact-section .contact-container .contact-data-form .contact-form .form-comment {
-  outline-color: var(--primary-pink);
+  outline-color: #eb3d72;
   margin-top: 10px;
   padding: 5px;
   border-radius: 5px;
@@ -318,7 +311,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   margin: 10px 0;
 }
 .contact-section .contact-container .contact-data-form .contact-form .contact-form-actions .contact-form-btn {
-  background-color: var(--primary-green);
+  background-color: #28b29e;
   height: 50px;
   padding: 10px;
   color: white;
@@ -433,7 +426,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .footer {
-  background-color: var(--background-Header);
+  background-color: #f8f9f9;
   height: 110px;
   width: 100%;
   display: flex;
@@ -441,14 +434,14 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   justify-content: space-evenly;
   align-items: center;
   margin-right: 10px;
-  color: var(--primary-pink);
+  color: #eb3d72;
 }
 .footer .footer-title {
   font-size: 1.2rem;
   font-family: "Poppins", sans-seri;
 }
 .footer .icons-container {
-  color: var(--primary-green);
+  color: #28b29e;
   display: flex;
   justify-content: space-evenly;
   width: 150px;
@@ -456,26 +449,6 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 .footer .icons-container .icon {
   font-size: 35px;
   cursor: pointer;
-}
-
-.tupper-link {
-  color: #959595;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.link-items {
-  color: black;
-  display: inline-block;
-  width: 160px;
-  border-radius: 30px;
-  border: 1px solid black;
-  margin: 10px;
-  text-align: center;
-}
-
-.link-items:hover {
-  background-color: var(--secondary-green);
 }
 
 #logo {
@@ -489,15 +462,14 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   justify-content: flex-end;
 }
 
-/* --------------------CATALOGO NATURA------------------------ */
 .container-fluid {
   margin-top: 130px;
-  max-width: var(--app-width);
+  max-width: 1200px;
   width: 100%;
 }
 
 .btn {
-  background-color: var(--primary-green);
+  background-color: #28b29e;
   color: white;
 }
 
@@ -573,9 +545,6 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
     transform-origin: top;
     opacity: 1;
   }
-}
-@media screen and (max-width: 768px) {
-  /* grid */
 }
 
 /*# sourceMappingURL=styles.css.map */
