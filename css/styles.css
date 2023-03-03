@@ -75,6 +75,7 @@ header .header-container .header-nav .nav-menu {
   align-items: center;
   height: 0px;
   width: 100%;
+  transition: height 2s;
 }
 header .header-container .header-nav .nav-menu li {
   list-style: none;
