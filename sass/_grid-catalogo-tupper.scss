@@ -1,0 +1,78 @@
+.header-container {
+  display: grid;
+  grid-template-rows: 110px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "img  nav";
+}
+
+#grid-container {
+  display: grid;
+  gap: 15px;
+  max-width: var(--app-width);
+  width: 100%;
+  margin: 0 auto;
+  grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas:
+    "img img    img    img    nav    nav    nav    nav"
+    "... search search search search search search ..."
+    "... p1     p1     p2     p2     p3     p3     ..."
+    "... p1     p1     p2     p2     p3     p3     ..."
+    "... p4     p4     p5     p5     p6     p6     ..."
+    "... p4     p4     p5     p5     p6     p6     ..."
+    "foo foo    foo    foo    foo    foo    foo    foo";
+
+
+
+    #search {
+      grid-area: search;
+    }
+
+    @for $producto from 1 through 6 {
+      #producto-#{$producto}{
+        grid-area: p#{$producto};
+        align-items: center;
+        .card-body {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+    
+    #footer {
+      grid-area: foo;
+    }
+  
+  @include tablet{
+    display: grid;
+    grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 50px 1fr 1fr 50px;
+    grid-template-areas:
+      "img img    nav  nav"
+      "... search search ..."
+      "... p1     p2     ..."
+      "... p1     p2     ..."
+      "... p3     p4     ..."
+      "... p3     p4     ..."
+      "... p5     p6     ..."
+      "... p5     p6     ..."
+      "foo foo    foo    foo";
+  }
+
+  @include mobile{
+    grid-template-rows: 110px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 20px 1fr 20px;
+    grid-template-areas:
+      "img img    nav"
+      "... search ..."
+      "... p1     ..."
+      "... p2     ..."
+      "... p3     ..."
+      "... p4     ..."
+      "... p5     ..."
+      "... p6     ..."
+      "foo foo    foo";
+  }
+
+}
