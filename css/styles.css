@@ -121,13 +121,13 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .section-container {
-  max-width: 1200px;
-  width: 80%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  max-width: 1200px;
+  width: 80%;
+  height: 100%;
   margin: 50px auto;
 }
 .section-container .section-items {
@@ -147,6 +147,7 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 @media screen and (max-width: 768px) {
   .section-container {
     height: 600px;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -436,13 +437,13 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .footer {
-  background-color: #f8f9f9;
-  height: 110px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #f8f9f9;
+  height: 110px;
+  width: 100%;
   margin-right: 10px;
   color: #eb3d72;
 }
@@ -489,39 +490,33 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
 }
 
 .card-1 {
+  -webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.card-2 {
   -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-.card-2 {
+.card-3 {
   -webkit-animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-.card-3 {
+.card-4 {
   -webkit-animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-.card-4 {
+.card-5 {
   -webkit-animation: swing-in-top-fwd 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
-.card-5 {
+.card-6 {
   -webkit-animation: swing-in-top-fwd 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-.card-6 {
-  -webkit-animation: swing-in-top-fwd 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 7s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-}
-
-/* animista */
-.swing-in-top-fwd {
-  -webkit-animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  animation: swing-in-top-fwd 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
 }
 
 @-webkit-keyframes swing-in-top-fwd {
