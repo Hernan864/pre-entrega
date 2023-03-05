@@ -1,0 +1,52 @@
+.section-card {
+  max-width: $app-width;
+  margin: 0 auto;
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .section-article {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 10px;
+    margin-top: 30px;
+
+    .section-art-item {
+      width: 350px;
+      height: 350px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      color: #959595;
+      box-shadow: $box-shadow;
+      transition: transform 0.2s;
+      cursor: pointer;
+      
+      &:hover {
+        transform: scale(1.01);
+      }
+
+      .section-link{
+        color: #959595;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover{
+          color: #28b29e;
+        }
+      }
+    }
+
+    @include tablet{
+      flex-direction: column;
+      margin: 0 auto;
+      width: unset;
+    }
+  }
+}

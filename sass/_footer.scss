@@ -1,0 +1,25 @@
+.footer {
+  @include flex-col-envenly-center;
+  background-color: $background-Header;
+  height: 110px;
+  width: 100%;
+  margin-right: 10px;
+  color: $primary-pink ;
+
+  .footer-title {
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-seri;
+  }
+
+  .icons-container {
+    color: $primary-green;
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+
+    .icon {
+      font-size: 35px;
+      cursor: pointer;
+    }
+  }
+}
