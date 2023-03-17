@@ -220,7 +220,8 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   margin: 30px 0;
   color: #959595;
   font-style: italic;
-  font-size: 16px;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .section-sobre-mi .sobre-mi-container {
   margin-top: 15px;
@@ -236,12 +237,12 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
   flex-direction: column;
 }
 .section-sobre-mi .sobre-mi-container .sobre-mi-parrafo .sobre-mi-title {
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #eb3d72;
 }
 .section-sobre-mi .sobre-mi-container .sobre-mi-parrafo .sobre-mi-text {
   margin-right: 40px;
-  font-size: 16px;
+  font-size: 1.2rem;
 }
 .section-sobre-mi .sobre-mi-container .sobre-mi-img2 {
   width: 820px;
@@ -548,6 +549,60 @@ header .header-container .header-nav .nav-menu li .menu-link:hover {
     transform: rotateX(0deg);
     -webkit-transform-origin: top;
     transform-origin: top;
+    opacity: 1;
+  }
+}
+#producto-1 {
+  -webkit-animation: swirl-in-fwd 1s ease-out both;
+  animation: swirl-in-fwd 1s ease-out both;
+}
+
+#producto-2 {
+  -webkit-animation: swirl-in-fwd 2s ease-out both;
+  animation: swirl-in-fwd 2s ease-out both;
+}
+
+#producto-3 {
+  -webkit-animation: swirl-in-fwd 3s ease-out both;
+  animation: swirl-in-fwd 3s ease-out both;
+}
+
+#producto-4 {
+  -webkit-animation: swirl-in-fwd 4s ease-out both;
+  animation: swirl-in-fwd 4s ease-out both;
+}
+
+#producto-5 {
+  -webkit-animation: swirl-in-fwd 5s ease-out both;
+  animation: swirl-in-fwd 5s ease-out both;
+}
+
+#producto-6 {
+  -webkit-animation: swirl-in-fwd 6s ease-out both;
+  animation: swirl-in-fwd 6s ease-out both;
+}
+
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
     opacity: 1;
   }
 }
