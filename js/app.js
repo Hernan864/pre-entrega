@@ -72,7 +72,7 @@ productos.forEach((producto,index) => {
     divCard.appendChild(cardBody);
 
     divCol.appendChild(divCard);
-});
 
+});
 
 
