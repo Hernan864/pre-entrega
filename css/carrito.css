@@ -1,0 +1,79 @@
+section{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+table {
+    width: 800px;
+    margin: 0 auto;
+}
+caption{
+    background-color: rgb(55, 53, 53);
+    color: white;
+    padding: 15px;
+}
+
+Thead{
+    background-color: #28b29e;
+    color: white;
+
+}
+tr th{
+    padding: 15px;
+}
+tr td{
+    padding: 15px;
+    text-align: center;
+}
+tbody tr{
+    border-collapse: collapse;
+}
+
+tbody tr:nth-child(even){
+    background-color: rgb(208, 208, 211);
+}
+
+tbody tr:hover{
+    background-color: #28b29e;
+    color: white;
+}
+div{
+    padding-top:15px ;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+tfoot{
+    background-color: #28b29e;
+    color: white;
+}
+.totalText{
+    font-weight: 600;
+}
+
+.total{
+    font-weight: 700;
+}
+
+.vaciarBtn{
+    background-color:  #28b29e;
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.comprarBtn{
+    background-color:  #28b29e;
+    height: 50px;
+    width: 150px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}

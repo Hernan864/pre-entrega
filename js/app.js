@@ -1,7 +1,13 @@
 let carrito=[];
 let productos=[];
 
-const divCol = document.querySelector(".col-sm-4");
+let carritoLS=JSON.parse(localStorage.getItem("carrito"));
+console.log(carritoLS.length);
+
+const contadorCarrito = document.querySelector(".contadorCarrito");
+contadorCarrito.textContent = carritoLS.length;
+
+const divCol = document.querySelector(".padre");
 
 if(localStorage.getItem("carrito")){
     carrito=JSON.parse(localStorage.getItem("carrito"));
@@ -16,33 +22,12 @@ if(localStorage.getItem("carrito")){
 // localStorage.setItem("productos",JSON.stringify(productos));
 
 
-productos=JSON.parse(localStorage.getItem("productos"));
-productos.forEach((producto,index) => {
-   
-    let divCard = document.createElement("div");
-    divCard.classList.add(`card-${index+1}`);
-    divCard.classList.add("card");
+divCol.addEventListener("click", (e)=>{
+    if (e.target.classList.value==="btn"){
 
-   
-    let img = document.createElement("img");
-    img.setAttribute("src", producto.url);
-    img.setAttribute("alt","Ima");
-    img.classList.add("card-img-top");
-    divCard.appendChild(img);
-
-    let cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    let cardTitle = document.createElement("h5");
-    let cardPrice = document.createElement("p");
-    let cardBtn = document.createElement("a");
-    cardTitle.classList.add("card-title");
-    cardTitle.textContent = producto.nombre;
-    cardPrice.classList.add("card-text");
-    cardPrice.textContent = "$ "+producto.precio;
-    cardBtn.classList.add("btn");
-    cardBtn.textContent="Agregar a la compra";
-    cardBtn.addEventListener("click",()=>{
+        let elemento = e.target;
+        let dataID = elemento.getAttribute('data-id');
+        let producto = productos.find((producto)=>producto.id=== +dataID);
 
         const carritoLS =JSON.parse(localStorage.getItem("carrito"));
         if (carritoLS===null){
@@ -61,18 +46,45 @@ productos.forEach((producto,index) => {
             carrito=[...carritoLS, new ItemCarrito(producto,1) ]
             localStorage.setItem("carrito",JSON.stringify(carrito));
         }}
-    })
 
+    }
+   
+})
+let crearElementos=(elemento,clase,nombre,setId, setUrl)=>{
+    let etiqueta=document.createElement(elemento);
+    etiqueta.classList.add(clase);
+    etiqueta.textContent=nombre;
+    etiqueta.setAttribute("data-id",setId || "")
+    etiqueta.setAttribute("src",setUrl || "" )
+    return etiqueta;
+}
+productos=JSON.parse(localStorage.getItem("productos"));
+productos.forEach((producto,index) => {
+    
+    let divCard = document.createElement("div");
+    divCard.classList.add(`card-${index+1}`);
+    divCard.classList.add("card");
+    
+    
+    let img = crearElementos("img","card-img-top","","",producto.url);
+    img.setAttribute("alt","Imagen del producto");
+    divCard.appendChild(img);
 
-
+    let cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+    
+    let cardTitle = crearElementos("h5","card-title",producto.nombre);
+    let cardPrice = crearElementos("p","card-text","$"+producto.nombre);
+    let cardBtn = crearElementos("button","btn","Agregar a la compra",producto.id);
+  
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardPrice);
     cardBody.appendChild(cardBtn);
-
+    
     divCard.appendChild(cardBody);
-
+    
     divCol.appendChild(divCard);
-
+    
 });
 
 

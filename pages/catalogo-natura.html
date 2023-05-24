@@ -20,6 +20,7 @@
         integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/natura.css">
 </head>
 
 <body>
@@ -51,7 +52,12 @@
                         <a class="menu-link" href="./contacto.html">Contacto</a>
                     </li>
                     <li class="menu-item">
-                        <a class="menu-link" href="./carrito.html">Carrito</a>
+                        <a class="menu-link" href="./carrito.html">
+                            <div class="carritoConteiner">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="contadorCarrito"></span>
+                            </div>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -59,12 +65,12 @@
     </header>
 
     <div class="container-fluid text-center">
-        <form class="d-flex" role="search">
+        <form class="d-flex" role="search" >
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn " type="button">Search</button>
         </form>
         <div class="row ">
-            <div class="col-sm-4  col-md-4 mb-2 mt-2">
+            <div class="padre col-sm-4  col-md-4 mb-2 mt-2">
                 <!-- codigo dinamico -->
             </div>
        

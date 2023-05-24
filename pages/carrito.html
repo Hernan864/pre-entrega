@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/carrito.css">
     <title>Carrito</title>
 </head>
 <body>
-    <table border="1">
-        <caption>Lista de productos del carrito</caption>
-        <Thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Precio Unitario</th>
-                <th>Cantidad</th>
-                <th>Subtotal</th>
-            </tr>
-        </Thead>
-        <tbody>
-            <!-- codigo dinamico-->
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">Total</td>
-                <td class="total">total</td>
-            </tr>
-        </tfoot>
-    </table>
+    <section>
+        <table >
+            <caption>Lista de productos del carrito</caption>
+            <Thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </Thead>
+            <tbody>
+                <!-- codigo dinamico-->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="totalText" colspan="3">Total</td>
+                    <td class="total">total</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div>
+            <button class="vaciarBtn">Vaciar carrito</button>
+            <button class="comprarBtn">Comprar</button>
+        </div>
+
+    </section>
     <script src="../js/carrito.js"></script>
 </body>
 </html>
