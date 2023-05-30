@@ -1,7 +1,24 @@
 let tabla=document.querySelector("table");
+let section=document.querySelector("section");
+
+
+let numeroFactura=0;
+let idcliente=1;
+let facturaLS=[];
+let factura=[];
+
+const obtenerStorage=(storage)=>{
+    return JSON.parse(localStorage.getItem(storage));
+}
+facturaLS=obtenerStorage("factura");
+if (facturaLS?.length){
+    numeroFactura=facturaLS.length;
+}else{
+    numeroFactura=0;
+}
+
 
 tabla.addEventListener("click",(e)=>{
-
     if(e.target.getAttribute("data-id")!== null && e.target.innerText === "Eliminar"){
         let carritoLS =  JSON.parse(localStorage.getItem("carrito"));
         let idElemento= +e.target.getAttribute("data-id");
@@ -10,7 +27,49 @@ tabla.addEventListener("click",(e)=>{
         localStorage.setItem("carrito",JSON.stringify(carritoLS));
         location.reload();
     }
-    
+});
+const vaciarLS=(vaciarLS,nombreLS)=>{
+    vaciarLS=[];
+    localStorage.setItem(nombreLS,JSON.stringify(vaciarLS));
+    location.reload();
+}
+section.addEventListener("click",(e)=>{
+    let confirmacion;
+    if(e.target.classList[0]==="vaciarBtn"){
+        carritoLS=obtenerStorage("carrito");
+        console.log("carritols",carritoLS)
+        if (carritoLS.length!==0){
+            console.log("carritols",carritoLS.length);
+            confirmacion=confirm("Realmente desea vaciar el carrito? ");
+            if (confirmacion){
+                vaciarLS(carritoLS,"carrito");
+                actualizarContador();
+            }
+        }else{
+            alert("El carrito esta vacio");
+        }
+    }else
+    if(e.target.classList[0]==="comprarBtn"){
+        carritoLS=obtenerStorage("carrito");
+        if(carritoLS.length!==0){
+            confirmacion=confirm("Esta por realizar la compra de los productos de la lista");
+            if (confirmacion){
+                if (numeroFactura===0){
+                    factura.push(new Factura(numeroFactura, idcliente, carritoLS));
+                    localStorage.setItem("factura",JSON.stringify(factura));
+                }else if(carritoLS.length)
+                {
+                    factura=[...facturaLS,new Factura(numeroFactura, idcliente, carritoLS)];
+                    localStorage.setItem("factura",JSON.stringify(factura))
+                }
+                vaciarLS(carritoLS,"carrito");
+            }else{
+                console.log("cancela la confirmacion");
+            }
+        }else{
+            alert("No hay productos para su compra");
+        }
+    }
 })
 
 let crearElemento=(elemento,contenidoTexto)=>{
@@ -24,11 +83,9 @@ const obtenerDatosCarrito = () => {
     const carritoLS = JSON.parse(localStorage.getItem("carrito"));
     const tbody = document.querySelector("tbody");
     if (carritoLS && tbody) {
-
         let sumaSubtotal = 0;
         carritoLS.forEach(ele => {
             const tr = document.createElement("tr");
-
             const tdNombre =crearElemento("td",ele.producto.nombre);
             const tdPrecio = crearElemento("td",ele.producto.precio);
             const tdCantidad = crearElemento("td",ele.cantidad);

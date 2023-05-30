@@ -66,6 +66,9 @@ tfoot{
     border-radius: 5px;
     font-size: 16px;
 }
+.vaciarBtn:hover{
+    background-color: #349082;
+}
 
 .comprarBtn{
     background-color:  #28b29e;
@@ -76,4 +79,7 @@ tfoot{
     border: none;
     border-radius: 5px;
     font-size: 16px;
+}
+.comprarBtn:hover{
+    background-color: #349082;
 }
