@@ -30,7 +30,7 @@ const cargarProductosLocalStorage = () => {
   productos.push(new Producto(6,"Homen coragio",5500,"../assets/img-natura-cards/NATARG-186_1.jpg"));
   localStorage.setItem("productos", JSON.stringify(productos));
 };
-// cargarProductosLocalStorage();
+cargarProductosLocalStorage();
 
 const divCol = document.querySelector(".padre");
 // agrega elementos al carrito del storage
@@ -85,7 +85,7 @@ let cargarProductosDOM = (producto, index) => {
   cardBody.classList.add("card-body");
 
   let cardTitle = crearElementos("h5", "card-title", producto.nombre);
-  let cardPrice = crearElementos("p", "card-text", "$" + producto.nombre);
+  let cardPrice = crearElementos("p", "card-text", "$" + producto.precio);
   let cardBtn = crearElementos("button","btn","Agregar a la compra",producto.id);
 
   cardBody.appendChild(cardTitle);
@@ -98,25 +98,59 @@ let cargarProductosDOM = (producto, index) => {
 };
 
 productos = JSON.parse(localStorage.getItem("productos"));
+let contador=0;
 productos.forEach((producto, index) => {
-  cargarProductosDOM(producto, index);
+    cargarProductosDOM(producto, index);
+  // contador++;
+  // if(contador<=3){
+
+  // }else
+  // if (contador%3===0){
+  //   const row=document.querySelector(".container-fluid");
+  //   const newDiv=document.createElement("div");
+  //   newDiv.classList.add("padre");
+  //   newDiv.classList.add("col-sm-4");
+  //   newDiv.classList.add("col-md-4");
+  //   newDiv.classList.add("mb-2");
+  //   newDiv.classList.add("mt-2");
+  //   const newRow=document.createElement("div");
+  //   newRow.classList.add("row");
+  //   newRow.appendChild(newDiv);
+  //   row.appendChild(newRow);
+  //   cargarProductosDOM(producto, index);
+
+  // }
 });
 
-inputBuscar.addEventListener("input", (e) => {
+inputBuscar.addEventListener("change", (e) => {
+  e.preventDefault;
   let valorBuscado = e.target.value.toUpperCase();
   let productosLs = obtenerStorage("productos");
-
+  let spam=document.createElement("spam");
   let productosEncontrados = productosLs.filter((producto) => {
     return producto.nombre.toUpperCase().includes(valorBuscado);
   });
   if (productosEncontrados.length !== 0) {
     productosLs.forEach(() => {eliminarDOM();});
+    spam=document.querySelector("spam");
+    spam?.remove();
     productosEncontrados.forEach((producto, index) => {
       cargarProductosDOM(producto, index);
     });
-  } else if (productosEncontrados.length === 0) {
-      productosLs.forEach((producto, index) => {
-      cargarProductosDOM(producto, index);
-    });
-  }
+  } else 
+      if(valorBuscado!=="" && productosEncontrados.length === 0){
+          productosLs.forEach(() => {eliminarDOM();});
+          
+          let padre=document.querySelector(".padre");
+          spam.textContent="No hay conincidencia con la busqueda realizada"
+          padre.appendChild(spam)
+          console.log("No hay conincidencia con la busqueda realizada");
+      }else 
+        if (productosEncontrados.length === 0) {
+          spam=document.querySelector("spam");
+          spam.remove();
+          productosLs.forEach((producto, index) => {
+          cargarProductosDOM(producto, index);
+          });
+        }
 });
