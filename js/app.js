@@ -22,12 +22,12 @@ if (localStorage.getItem("carrito")) {
 }
 
 const cargarProductosLocalStorage = () => {
-  productos.push(new Producto(1,"perfume mas bolso",1500,"../assets/img-natura-cards/125654_1.jpg"));
+  productos.push(new Producto(1, "perfume mas bolso", 1500, "../assets/img-natura-cards/125654_1.jpg"));
   productos.push(new Producto(2, "Kriska Rojo", 2500, "../assets/img-natura-cards/185_1.jpg"));
-  productos.push(new Producto(3,"Homen emotion",6000,"../assets/img-natura-cards/NATARG-97823_1.jpg"));
-  productos.push(new Producto(4,"Humor",7500,"../assets/img-natura-cards/NATARG-1921_1.jpg"));
-  productos.push(new Producto(5,"Kaik",8500,"../assets/img-natura-cards/NATARG-13120_1.jpg"));
-  productos.push(new Producto(6,"Homen coragio",5500,"../assets/img-natura-cards/NATARG-186_1.jpg"));
+  productos.push(new Producto(3, "Homen emotion", 6000, "../assets/img-natura-cards/NATARG-97823_1.jpg"));
+  productos.push(new Producto(4, "Humor", 7500, "../assets/img-natura-cards/NATARG-1921_1.jpg"));
+  productos.push(new Producto(5, "Kaik", 8500, "../assets/img-natura-cards/NATARG-13120_1.jpg"));
+  productos.push(new Producto(6, "Homen coragio", 5500, "../assets/img-natura-cards/NATARG-186_1.jpg"));
   localStorage.setItem("productos", JSON.stringify(productos));
 };
 cargarProductosLocalStorage();
@@ -45,7 +45,7 @@ divCol.addEventListener("click", (e) => {
       carrito.push(new ItemCarrito(producto, 1));
       localStorage.setItem("carrito", JSON.stringify(carrito));
     } else {
-        const indexElelment = carritoLS?.findIndex((carr) => {
+      const indexElelment = carritoLS?.findIndex((carr) => {
         return producto.id === carr.producto.id;
       });
 
@@ -77,7 +77,7 @@ const eliminarDOM = () => {
 const cargarProductosDOM = (producto, index) => {
   let divCard = document.createElement("div");
   divCard.classList.add(`card-${index + 1}`);
-  divCard.classList.add("card");
+  divCard.classList.add("card", "col-lg-6", "col-md-4", "col-sm-4");
 
   let img = crearElementos("img", "card-img-top", "", "", producto.url);
   img.setAttribute("alt", "Imagen del producto");
@@ -88,7 +88,7 @@ const cargarProductosDOM = (producto, index) => {
 
   let cardTitle = crearElementos("h5", "card-title", producto.nombre);
   let cardPrice = crearElementos("p", "card-text", "$" + producto.precio);
-  let cardBtn = crearElementos("button","btn","Agregar a la compra",producto.id);
+  let cardBtn = crearElementos("button", "btn", "Agregar a la compra", producto.id);
 
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardPrice);
@@ -100,40 +100,40 @@ const cargarProductosDOM = (producto, index) => {
 };
 
 productos = JSON.parse(localStorage.getItem("productos"));
-let contador=0;
+let contador = 0;
 productos.forEach((producto, index) => {
-    cargarProductosDOM(producto, index);
+  cargarProductosDOM(producto, index);
 });
 
-inputBuscar.addEventListener("input", (e) => {
+inputBuscar.addEventListener("change", (e) => {
   e.preventDefault;
   let valorBuscado = e.target.value.toUpperCase();
   let productosLs = obtenerStorage("productos");
-  let spam=document.createElement("spam");
+  let spam = document.createElement("spam");
   let productosEncontrados = productosLs.filter((producto) => {
     return producto.nombre.toUpperCase().includes(valorBuscado);
   });
   if (productosEncontrados.length !== 0) {
-    productosLs.forEach(() => {eliminarDOM();});
-    spam=document.querySelector("spam");
+    productosLs.forEach(() => { eliminarDOM(); });
+    spam = document.querySelector("spam");
     spam?.remove();
     productosEncontrados.forEach((producto, index) => {
       cargarProductosDOM(producto, index);
     });
-  } else 
-      if(valorBuscado!=="" && productosEncontrados.length === 0){
-          productosLs.forEach(() => {eliminarDOM();});
-          
-          let padre=document.querySelector(".padre");
-          spam.textContent="No hay conincidencia con la busqueda realizada"
-          padre.appendChild(spam)
-          console.log("No hay conincidencia con la busqueda realizada");
-      }else 
-        if (productosEncontrados.length === 0) {
-          spam=document.querySelector("spam");
-          spam.remove();
-          productosLs.forEach((producto, index) => {
+  } else
+    if (valorBuscado !== "" && productosEncontrados.length === 0) {
+      productosLs.forEach(() => { eliminarDOM(); });
+
+      let padre = document.querySelector(".padre");
+      spam.textContent = "No hay conincidencia con la busqueda realizada"
+      padre.appendChild(spam)
+      console.log("No hay conincidencia con la busqueda realizada");
+    } else
+      if (productosEncontrados.length === 0) {
+        spam = document.querySelector("spam");
+        spam.remove();
+        productosLs.forEach((producto, index) => {
           cargarProductosDOM(producto, index);
-          });
-        }
+        });
+      }
 });
