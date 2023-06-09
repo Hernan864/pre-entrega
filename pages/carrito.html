@@ -8,11 +8,11 @@
     <title>Carrito</title>
 </head>
 <body>
-    <section>
-        <table >
-            <caption>Lista de productos del carrito</caption>
-            <Thead>
-                <tr>
+    <section class="section-container">
+        <table class="section-table">
+            <caption class="table-caption">Lista de productos del carrito</caption>
+            <Thead class="table-head">
+                <tr class="table-head-row">
                     <th>Nombre</th>
                     <th>Precio Unitario</th>
                     <th>Cantidad</th>
@@ -20,10 +20,10 @@
                     <th></th>
                 </tr>
             </Thead>
-            <tbody>
+            <tbody class="table-body">
                 <!-- codigo dinamico-->
             </tbody>
-            <tfoot>
+            <tfoot class="footer">
                 <tr>
                     <td class="totalText" colspan="3">Total</td>
                     <td class="total">total</td>
@@ -31,12 +31,14 @@
                 </tr>
             </tfoot>
         </table>
-        <div>
+        <div class="actions">
             <button class="vaciarBtn">Vaciar carrito</button>
             <button class="comprarBtn">Comprar</button>
         </div>
 
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/sweetAlert.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="../js/Factura.js"></script>
 

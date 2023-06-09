@@ -34,45 +34,82 @@ const vaciarLS=(vaciarLS,nombreLS)=>{
     location.reload();
 }
 section.addEventListener("click",(e)=>{
-    let confirmacion;
     if(e.target.classList[0]==="vaciarBtn"){
         carritoLS=obtenerStorage("carrito");
         console.log("carritols",carritoLS)
         if (carritoLS.length!==0){
-            console.log("carritols",carritoLS.length);
-            confirmacion=confirm("Realmente desea vaciar el carrito? ");
-            if (confirmacion){
-                vaciarLS(carritoLS,"carrito");
-                actualizarContador();
-            }
+          
+            Swal.fire({
+                title: 'Esta seguro?',
+                text: "No podrás revertir esto.!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, vaciar.!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Carrito vaciado!',
+                        'sus productos fueron eliminados.',
+                        'success'
+                        ).then(()=>{
+                            
+                            vaciarLS(carritoLS,"carrito");
+                            actualizarContador();
+                        })
+                }
+              })
         }else{
-            alert("El carrito esta vacio");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'El carrito esta vacio!',
+              })
         }
     }else
     if(e.target.classList[0]==="comprarBtn"){
         carritoLS=obtenerStorage("carrito");
         if(carritoLS.length!==0){
-            confirmacion=confirm("Esta por realizar la compra de los productos de la lista");
-            if (confirmacion){
-                if (numeroFactura===0){
-                    factura.push(new Factura(numeroFactura, idcliente, carritoLS));
-                    localStorage.setItem("factura",JSON.stringify(factura));
-                }else if(carritoLS.length)
-                {
-                    factura=[...facturaLS,new Factura(numeroFactura, idcliente, carritoLS)];
-                    localStorage.setItem("factura",JSON.stringify(factura))
+            Swal.fire({
+                title: 'Confirmacion de compra',
+                icon: 'info',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Confirmar'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Compra realizada',
+                        '',
+                        'success'
+                        ).then(()=>{
+                            if (numeroFactura===0){
+                                factura.push(new Factura(numeroFactura, idcliente, carritoLS));
+                                localStorage.setItem("factura",JSON.stringify(factura));
+                            }else if(carritoLS.length)
+                            {
+                                factura=[...facturaLS,new Factura(numeroFactura, idcliente, carritoLS)];
+                                localStorage.setItem("factura",JSON.stringify(factura))
+                            }
+                            vaciarLS(carritoLS,"carrito");
+                        })
                 }
-                vaciarLS(carritoLS,"carrito");
-            }else{
-                console.log("cancela la confirmacion");
-            }
+              })
+         
         }else{
-            alert("No hay productos para su compra");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No hay productos en su carrito!',
+              })
+            // alert("No hay productos para su compra");
         }
     }
 })
 
-let crearElemento=(elemento,contenidoTexto)=>{
+const crearElemento=(elemento,contenidoTexto)=>{
     let etiqueta=document.createElement(elemento);
     etiqueta.textContent=contenidoTexto;
     return etiqueta;

@@ -1,42 +1,42 @@
-section{
-    max-width: 1200px;
+.section-container{
+    width: 100%;
     margin: 0 auto;
 }
-table {
+.section-table {
     width: 800px;
     margin: 0 auto;
 }
-caption{
+.table-caption{
     background-color: rgb(55, 53, 53);
     color: white;
     padding: 15px;
 }
 
-Thead{
+.table-head{
     background-color: #28b29e;
     color: white;
 
 }
-tr th{
+.table-head-row th{
     padding: 15px;
 }
 tr td{
     padding: 15px;
     text-align: center;
 }
-tbody tr{
+.table-body tr{
     border-collapse: collapse;
 }
 
-tbody tr:nth-child(even){
+.table-body tr:nth-child(even){
     background-color: rgb(208, 208, 211);
 }
 
-tbody tr:hover{
+.table-body tr:hover{
     background-color: #28b29e;
     color: white;
 }
-div{
+.actions{
     padding-top:15px ;
     width: 800px;
     margin: 0 auto;
@@ -44,7 +44,7 @@ div{
     justify-content: space-around;
 }
 
-tfoot{
+.footer{
     background-color: #28b29e;
     color: white;
 }

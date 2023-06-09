@@ -5,8 +5,8 @@ let inputBuscar = document.querySelector(".form-control");
 const obtenerStorage = (storage) => {
   return JSON.parse(localStorage.getItem(storage));
 };
-
 let carritoLS = obtenerStorage("carrito");
+
 // cuenta los productos en el carrito
 if (carritoLS.length !== 0) {
   const contadorCarrito = document.querySelector(".contadorCarrito");
@@ -32,8 +32,8 @@ const cargarProductosLocalStorage = () => {
 };
 cargarProductosLocalStorage();
 
-const divCol = document.querySelector(".padre");
 // agrega elementos al carrito del storage
+const divCol = document.querySelector(".padre");
 divCol.addEventListener("click", (e) => {
   if (e.target.classList.value === "btn") {
     let elemento = e.target;
@@ -60,7 +60,7 @@ divCol.addEventListener("click", (e) => {
   }
 });
 
-let crearElementos = (elemento, clase, nombre, setId, setUrl) => {
+const crearElementos = (elemento, clase, nombre, setId, setUrl) => {
   let etiqueta = document.createElement(elemento);
   etiqueta.classList.add(clase);
   etiqueta.textContent = nombre;
@@ -68,11 +68,13 @@ let crearElementos = (elemento, clase, nombre, setId, setUrl) => {
   etiqueta.setAttribute("src", setUrl || "");
   return etiqueta;
 };
-let eliminarDOM = () => {
+
+const eliminarDOM = () => {
   let elementosEliminar = document.querySelector(".card");
   elementosEliminar?.remove();
 };
-let cargarProductosDOM = (producto, index) => {
+
+const cargarProductosDOM = (producto, index) => {
   let divCard = document.createElement("div");
   divCard.classList.add(`card-${index + 1}`);
   divCard.classList.add("card");
@@ -101,28 +103,9 @@ productos = JSON.parse(localStorage.getItem("productos"));
 let contador=0;
 productos.forEach((producto, index) => {
     cargarProductosDOM(producto, index);
-  // contador++;
-  // if(contador<=3){
-
-  // }else
-  // if (contador%3===0){
-  //   const row=document.querySelector(".container-fluid");
-  //   const newDiv=document.createElement("div");
-  //   newDiv.classList.add("padre");
-  //   newDiv.classList.add("col-sm-4");
-  //   newDiv.classList.add("col-md-4");
-  //   newDiv.classList.add("mb-2");
-  //   newDiv.classList.add("mt-2");
-  //   const newRow=document.createElement("div");
-  //   newRow.classList.add("row");
-  //   newRow.appendChild(newDiv);
-  //   row.appendChild(newRow);
-  //   cargarProductosDOM(producto, index);
-
-  // }
 });
 
-inputBuscar.addEventListener("change", (e) => {
+inputBuscar.addEventListener("input", (e) => {
   e.preventDefault;
   let valorBuscado = e.target.value.toUpperCase();
   let productosLs = obtenerStorage("productos");
