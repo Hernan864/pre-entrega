@@ -30,7 +30,7 @@ const cargarProductosLocalStorage = () => {
   productos.push(new Producto(6, "Homen coragio", 5500, "../assets/img-natura-cards/NATARG-186_1.jpg"));
   localStorage.setItem("productos", JSON.stringify(productos));
 };
-cargarProductosLocalStorage();
+// cargarProductosLocalStorage();
 
 // agrega elementos al carrito del storage
 const divCol = document.querySelector(".padre");
@@ -101,6 +101,31 @@ const cargarProductosDOM = (producto, index) => {
 
 productos = JSON.parse(localStorage.getItem("productos"));
 let contador = 0;
+let productosAPI = [];
+const cargarAPI = async () => {
+  await fetch("https://makeup-api.herokuapp.com/api/v1/products.json?product_category=powder&product_type=blush")
+    .then((response) => response.json())
+    .then((data) => {
+      productosAPI = data.map((data) => {
+        return {
+          id: data.id,
+          nombre: data.name,
+          precio: data.price,
+          url: data.image_link
+        };
+      }).filter((data) => {
+        return parseFloat(data.precio) > 0 && data.precio !== null
+      })
+      productosAPI.forEach((producto, index) => {
+        cargarProductosDOM(producto, index);
+      })
+      localStorage.setItem("productos", JSON.stringify(productosAPI));
+
+    });
+
+}
+// cargarAPI();
+productos = obtenerStorage("productos")
 productos.forEach((producto, index) => {
   cargarProductosDOM(producto, index);
 });
