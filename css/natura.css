@@ -1,0 +1,17 @@
+.carritoConteiner{
+    position: relative;
+  }
+  .contadorCarrito{
+    position: absolute;
+    display: inline-block;
+    text-align: center;
+    left: 15px;
+    right: 0px;
+    bottom: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+  }

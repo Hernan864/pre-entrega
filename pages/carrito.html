@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/carrito.css">
+    <title>Carrito</title>
+</head>
+
+<body>
+    <header class="header-carrito">
+        <img src="../assets/img/logo.png" alt="Logo de virginia" class="logo-vir">
+        <button class="btnVolver"><a class="link-volver" href="./catalogo-natura.html">volver al catalogo</a></button>
+    </header>
+    <section class="section-container">
+        <table class="section-table">
+            <caption class="table-caption">Lista de productos del carrito</caption>
+            <Thead class="table-head">
+                <tr class="table-head-row">
+                    <th>Nombre</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </Thead>
+            <tbody class="table-body">
+                <!-- codigo dinamico-->
+            </tbody>
+            <tfoot class="footer">
+                <tr>
+                    <td class="totalText" colspan="3">Total</td>
+                    <td class="total">total</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="actions">
+            <button class="vaciarBtn">Vaciar carrito</button>
+            <button class="comprarBtn">Comprar</button>
+        </div>
+
+    </section>
+    <footer>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/sweetAlert.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/Factura.js"></script>
+
+</body>
+
+</html>

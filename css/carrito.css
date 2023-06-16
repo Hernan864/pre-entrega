@@ -1,0 +1,126 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.header-carrito {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #f8f9f9;
+  color: white;
+  max-width: 1200px;
+  height: 110px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.logo-vir {
+  width: 250px;
+}
+.btnVolver {
+  background-color: #28b29e;
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.btnVolver:hover {
+  background-color: #349082;
+}
+.link-volver {
+  text-decoration: none;
+  color: white;
+}
+.section-container {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+.section-table {
+  width: 800px;
+  margin: 0 auto;
+}
+.table-caption {
+  background-color: rgb(55, 53, 53);
+  color: white;
+  padding: 15px;
+}
+
+.table-head {
+  background-color: #28b29e;
+  color: white;
+}
+.table-head-row th {
+  padding: 15px;
+}
+tr td {
+  padding: 15px;
+  text-align: center;
+}
+.table-body tr {
+  border-collapse: collapse;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: rgb(208, 208, 211);
+}
+
+.table-body tr:hover {
+  background-color: #28b29e;
+  color: white;
+}
+.actions {
+  padding-top: 15px;
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer {
+  background-color: #28b29e;
+  color: white;
+}
+.totalText {
+  font-weight: 600;
+}
+
+.total {
+  font-weight: 700;
+}
+
+.vaciarBtn {
+  background-color: #28b29e;
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.vaciarBtn:hover {
+  background-color: #349082;
+}
+
+.comprarBtn {
+  background-color: #28b29e;
+  height: 50px;
+  width: 150px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.comprarBtn:hover {
+  background-color: #349082;
+}
